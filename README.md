@@ -2,23 +2,27 @@
 
 Este proyecto consiste en el desarrollo de una red hyperledger besu permisionada y con el protocolo de consenso IBFT 2.0 (Proof Of Authority)
 
-1. [Comenzando](#Comenzando)
-2. [Pre-requisitos](#Pre-requisitos)
-3. [Instalación](#Instalación)
-4. [Despliegue](#Despliegue)
+1. [Comenzando](#comenzando)
+2. [Pre-requisitos](#pre-requisitos)
+3. [Instalación](#instalacion)
+4. [Despliegue](#despliegue)
 5. [Autores](#autores)
-6. [Agradecimientos](#Agradecimientos)
+6. [Agradecimientos](#agradecimientos)
 
 ## Comenzando 🚀
 
 La red esta configurada para 6 nodos estáticos. Incluyo la info de cada uno de los nodos que se van a crear:
 
 - Bootnode: Nodo que sirve para reconocer al resto de nodos. No es nodo validador
+
+	```
 	(*) ip: 172.16.239.11:8545
 	(*) node Address: 0x4bbaf7ea4c84fd28ef1fa74f10366ad8ad15a692
 	(*) pub Key: 0xb8e6e68aa839fc9448f244ad1cb68c2f2352a3d02c8b86f25a5e0f1296031697834be3dd32647a315cfcfd8bfbb9e9fc79811cfd791abf699ef18f5c688e1ae3
 	(*) priv Key: 0xb3c3c806839de5edcd56be47a86d325db7e9e4274180ba619d6d81b91f9e95ca
 
+	```
+	
 - Admin node: Nodo Administrador. No es nodo validador
 	(*) ip: 172.16.239.12:8545
 	(*) node Address: 0x43804b7e227e3d4441386ae5ceb0d189b73bdcf1
