@@ -1,20 +1,17 @@
-Red Hyperledger Besu
+# Red Hyperledger Besu
 
-## Red Hyperledger Besu
-1. [General Info](#general-info)
-2. [Technologies](#technologies)
-3. [Installation](#installation)
-4. [Collaboration](#collaboration)
-5. [FAQs](#faqs)
+Este proyecto consiste en el desarrollo de una red hyperledger besu permisionada y con el protocolo de consenso IBFT 2.0 (Proof Of Authority)
 
-### General Info
-Este proyecto consiste en el desarrollo de una red hyperledger besu con las siguientes caracteristicas:
+1. [Comenzando](#Comenzando)
+2. [Pre-requisitos](#Pre-requisitos)
+3. [Instalación](#Instalación)
+4. [Despliegue](#Despliegue)
+5. [Autores](#autores)
+6. [Agradecimientos](#Agradecimientos)
 
-	(*) Permisionada
-	(*) Protocolo de consenso Proof Of Authority: IBFT 2.0
-	
+## Comenzando 🚀
 
-Compuesta de los siguientes nodos:
+La red esta configurada para 6 nodos estáticos. Incluyo la info de cada uno de los nodos que se van a crear:
 
 - Bootnode: Nodo que sirve para reconocer al resto de nodos. No es nodo validador
 	(*) ip: 172.16.239.11:8545
@@ -57,23 +54,8 @@ Compuesta de los siguientes nodos:
 	(*) node Address: 0xf792828cec953c9c6d929e0f3b1cc59c5674af12
 	(*) pub Key: 0x6b367a82f1e326a6f68259802c21cc06269a8343988166b3b246d49f0ef7a047db5a7603aa703ad3ff8f0812989e697200f9d986c11dd1182cb1b8b78d935c69
 	(*) priv Key: 0x16f989df8dc79a6558c46e69483575d78f06aabd5bda28f3ad313993e432f1cf
-	
-# Red Hyperledger Besu
 
-Este proyecto consiste en el desarrollo de una red hyperledger besu permisionada y con el protocolo de consenso IBFT 2.0 (Proof Of Authority)
-
-## Comenzando 🚀
-
-La red esta configurada para 6 nodos estáticos.
-	(*) Bootnode
-	(*) AdminNode
-	(*) Node Validator 1
-	(*) Node Validator 2
-	(*) Node Validator 3
-	(*) Node Validator 4
-	(*) Node Miembro 1
-
-Mira **Deployment** para conocer como desplegar el proyecto.
+Mira **Despliegue** para conocer como desplegar el proyecto.
 
 
 ### Pre-requisitos 📋
@@ -140,7 +122,7 @@ _Para poder interactuar con la red desplegada, podremos utilizar la API de Hyper
 ## Expresiones de Gratitud 🎁
 
 * He utilizado la plantilla de [Villanuevand](https://github.com/Villanuevand) para el README.md (GRACIAS!!) 📢
-* Os agradecería cualquier comentario que me pudiese ayudar y cualquier pregunta que tengais intentare ayudaros. GRACIAS!! 🤓.
+* Os agradecería cualquier comentario que me pudiese ayudar y cualquier pregunta que tengais, intentare ayudaros. GRACIAS!! 🤓.
 
 
 
