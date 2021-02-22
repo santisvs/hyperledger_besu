@@ -71,10 +71,11 @@ Mira **Despliegue** para conocer como desplegar el proyecto.
 ### Pre-requisitos 📋
 
 Para desplegar en maquina virtual, según se indica en la documentación oficial, mínimo se necesitan 4GB de RAM. En este caso, yo utilizo 11GB de RAM ya que levanto un docker por cada nodo y más adelante incluiré el explorador de tx, grafana y sistemas que tiene el quickstart y que requieren de memoria. Por lo tanto, para probar la red yo utilizo lo siguiente:
-	* virtual box o cualquier generador de máquinas vistuales
-	* open-jdk-11
-	* docker
-	* docker compose
+
+* virtual box o cualquier generador de máquinas vistuales
+* open-jdk-11
+* docker
+* docker compose
 
 
 ### Instalación 🔧
