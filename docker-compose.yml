@@ -1,0 +1,160 @@
+---
+version: '3.6'
+
+x-besu-bootnode-def:
+  &besu-bootnode-def
+  restart: "on-failure"
+  image: hyperledger/besu:${BESU_VERSION:-latest}
+  entrypoint:
+    - /bin/bash
+    - -c
+    - |
+      /opt/besu/bin/besu --data-path=data public-key export-address --to=/opt/besu/data/address;
+      /opt/besu/bin/besu \
+      --genesis-file=/config/genesis.json \
+      --permissions-accounts-contract-enabled \
+      --permissions-accounts-config-file=/opt/besu/data/permissions_config.toml \
+      --permissions-nodes-config-file-enabled \
+      --permissions-nodes-config-file=/opt/besu/data/permissions_config.toml \
+      --config-file=/config/config.toml \
+      --bootnodes ;
+
+x-besu-def:
+  &besu-def
+  restart: "on-failure"
+  image: hyperledger/besu:${BESU_VERSION:-latest}
+  entrypoint:
+    - /bin/bash
+    - -c
+    - |
+      /opt/besu/bin/besu --data-path=data public-key export-address --to=/opt/besu/data/address;
+      /opt/besu/bin/besu \
+      --config-file=/config/config.toml \
+      --permissions-accounts-contract-enabled \
+      --permissions-accounts-config-file=/opt/besu/data/permissions_config.toml \
+      --permissions-nodes-config-file-enabled \
+      --permissions-nodes-config-file=/opt/besu/data/permissions_config.toml \
+      --genesis-file=/config/genesis.json ;
+
+x-besu-admin-def:
+  &besu-admin-def
+  restart: "on-failure"
+  image: hyperledger/besu:${BESU_VERSION:-latest}
+  entrypoint:
+    - /bin/bash
+    - -c
+    - |
+      /opt/besu/bin/besu --data-path=data public-key export-address --to=/opt/besu/data/address;
+      /opt/besu/bin/besu \
+      --config-file=/config/config.toml \
+      --permissions-accounts-contract-enabled \
+      --permissions-accounts-config-file=/opt/besu/data/permissions_config.toml \
+      --permissions-nodes-config-file-enabled \
+      --permissions-nodes-config-file=/opt/besu/data/permissions_config.toml \
+      --genesis-file=/config/genesis.json ;
+
+services:
+
+  bootnode:
+    << : *besu-bootnode-def
+    volumes:
+      - ./config/bootnode/data:/opt/besu/data
+      - ./config/bootnode/config.toml:/config/config.toml
+      - ./config/genesis.json:/config/genesis.json
+    networks:
+      quorum-dev-quickstart:
+        ipv4_address: 172.16.239.11
+        
+  adminnode:
+    << : *besu-admin-def
+    volumes:
+      - ./config/adminnode/data:/opt/besu/data
+      - ./config/adminnode/config.toml:/config/config.toml
+      - ./config/genesis.json:/config/genesis.json
+    depends_on:
+      - bootnode
+    networks:
+      quorum-dev-quickstart:
+        ipv4_address: 172.16.239.12
+  
+  validator1:
+    << : *besu-def
+    volumes:
+      - ./config/node1validator/data:/opt/besu/data
+      - ./config/node1validator/config.toml:/config/config.toml
+      - ./config/genesis.json:/config/genesis.json
+    depends_on:
+      - bootnode
+      - adminnode
+    networks:
+      quorum-dev-quickstart:
+        ipv4_address: 172.16.239.13
+  
+  validator2:
+    << : *besu-def
+    volumes:
+      - ./config/node2validator/data:/opt/besu/data
+      - ./config/node2validator/config.toml:/config/config.toml
+      - ./config/genesis.json:/config/genesis.json
+    depends_on:
+      - bootnode
+      - adminnode
+      - validator1
+    networks:
+      quorum-dev-quickstart:
+        ipv4_address: 172.16.239.14
+        
+  validator3:
+    << : *besu-def
+    volumes:
+      - ./config/node3validator/data:/opt/besu/data
+      - ./config/node3validator/config.toml:/config/config.toml
+      - ./config/genesis.json:/config/genesis.json
+    depends_on:
+      - bootnode
+      - adminnode
+      - validator1
+      - validator2
+    networks:
+      quorum-dev-quickstart:
+        ipv4_address: 172.16.239.15
+        
+  validator4:
+    << : *besu-def
+    volumes:
+      - ./config/node4validator/data:/opt/besu/data
+      - ./config/node4validator/config.toml:/config/config.toml
+      - ./config/genesis.json:/config/genesis.json
+    depends_on:
+      - bootnode
+      - adminnode
+      - validator1
+      - validator2
+      - validator3
+    networks:
+      quorum-dev-quickstart:
+        ipv4_address: 172.16.239.16
+        
+  miembro1:
+    << : *besu-def
+    volumes:
+      - ./config/node5member/data:/opt/besu/data
+      - ./config/node5member/config.toml:/config/config.toml
+      - ./config/genesis.json:/config/genesis.json
+    depends_on:
+      - bootnode
+      - adminnode
+      - validator1
+      - validator2
+      - validator3
+      - validator4
+    networks:
+      quorum-dev-quickstart:
+        ipv4_address: 172.16.239.17
+
+networks:
+  quorum-dev-quickstart:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.239.0/24

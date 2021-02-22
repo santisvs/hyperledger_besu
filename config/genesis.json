@@ -1,0 +1,17 @@
+{
+  "config" : {
+    "chainId" : 2018,
+    "muirGlacierBlock" : 0,
+    "ibft2" : {
+      "blockperiodseconds" : 2,
+      "epochlength" : 30000,
+      "requesttimeoutseconds" : 10
+    }
+  },
+  "nonce" : "0x0",
+  "timestamp" : "0x60265DC2",
+  "gasLimit" : "0x1fffffffffffff",
+  "difficulty" : "0x1",
+  "mixHash" : "0x63746963616c2062797a616e74696e65206661756c7420746f6c6572616e6365",
+  "extraData" : "0xf8bda00000000000000000000000000000000000000000000000000000000000000000f89394a59acad67a278889e9ab16ba42eee24d006c707894f792828cec953c9c6d929e0f3b1cc59c5674af1294b274123aa2813517b1b93075c2ab2a66efd1af9894c7c787f7bba6ecca08c81a4287754bb85de324a9944bbaf7ea4c84fd28ef1fa74f10366ad8ad15a69294e3b196b362542424fc36692ad1105f8ec2c49ce69443804b7e227e3d4441386ae5ceb0d189b73bdcf1808400000000c0"
+}

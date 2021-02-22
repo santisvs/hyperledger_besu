@@ -1,0 +1,25 @@
+
+logging="INFO"
+data-path="/opt/besu/data"
+host-whitelist=["*"]
+
+# rpc
+rpc-http-enabled=true
+rpc-http-host="0.0.0.0"
+rpc-http-port=8545
+rpc-http-cors-origins=["*"]
+rpc-http-api=["ADMIN","ETH","NET","WEB3","DEBUG","IBFT","PERM"]
+
+# ws
+rpc-ws-enabled=true
+rpc-ws-host="0.0.0.0"
+rpc-ws-port=8546
+rpc-ws-api=["ADMIN","ETH","NET","WEB3","DEBUG","IBFT","PERM"]
+
+# metrics
+metrics-enabled=true
+metrics-host="0.0.0.0"
+metrics-port=9545
+
+# bootnodes
+bootnodes=["enode://b8e6e68aa839fc9448f244ad1cb68c2f2352a3d02c8b86f25a5e0f1296031697834be3dd32647a315cfcfd8bfbb9e9fc79811cfd791abf699ef18f5c688e1ae3@172.16.239.11:30303"]
