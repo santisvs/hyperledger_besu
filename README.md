@@ -1,6 +1,14 @@
 Red Hyperledger Besu
 
-Desarrollo de una red hyperledger besu con las siguientes caracteristicas:
+## Red Hyperledger Besu
+1. [General Info](#general-info)
+2. [Technologies](#technologies)
+3. [Installation](#installation)
+4. [Collaboration](#collaboration)
+5. [FAQs](#faqs)
+
+### General Info
+Este proyecto consiste en el desarrollo de una red hyperledger besu con las siguientes caracteristicas:
 
 	(*) Permisionada
 	(*) Protocolo de consenso Proof Of Authority: IBFT 2.0
@@ -50,9 +58,90 @@ Compuesta de los siguientes nodos:
 	(*) pub Key: 0x6b367a82f1e326a6f68259802c21cc06269a8343988166b3b246d49f0ef7a047db5a7603aa703ad3ff8f0812989e697200f9d986c11dd1182cb1b8b78d935c69
 	(*) priv Key: 0x16f989df8dc79a6558c46e69483575d78f06aabd5bda28f3ad313993e432f1cf
 	
-## Table of Contents
-1. [General Info](#general-info)
-2. [Technologies](#technologies)
-3. [Installation](#installation)
-4. [Collaboration](#collaboration)
-5. [FAQs](#faqs)
+# Red Hyperledger Besu
+
+Este proyecto consiste en el desarrollo de una red hyperledger besu permisionada y con el protocolo de consenso IBFT 2.0 (Proof Of Authority)
+
+## Comenzando 🚀
+
+La red esta configurada para 6 nodos estáticos.
+	(*) Bootnode
+	(*) AdminNode
+	(*) Node Validator 1
+	(*) Node Validator 2
+	(*) Node Validator 3
+	(*) Node Validator 4
+	(*) Node Miembro 1
+
+Mira **Deployment** para conocer como desplegar el proyecto.
+
+
+### Pre-requisitos 📋
+
+Para desplegar en maquina virtual, según se indica en la documentación oficial, mínimo se necesitan 4GB de RAM. En este caso, yo utilizo 11GB de RAM ya que levanto un docker por cada nodo y más adelante incluiré el explorador de tx, grafana y sistemas que tiene el quickstart y que requieren de memoria. Por lo tanto, para probar la red yo utilizo lo siguiente:
+	(*) virtual box o cualquier generador de máquinas vistuales
+	(*) open-jdk-11
+	(*) docker
+	(*) docker compose
+
+
+### Instalación 🔧
+
+1- Crear una maquina virtual con la imagen Ubuntu 20.04 con 11GB de memoria y 2 procesadores
+2- Instalar open-jdk-11
+3- Instalar git
+4- Instalar docker
+5- Instalar docker compose
+
+## Ejecutando las pruebas ⚙️
+
+
+### Analice las pruebas end-to-end 🔩
+
+
+### Y las pruebas de estilo de codificación ⌨️
+
+
+## Despliegue 📦
+
+Para poder desplegar la red en local, deberas descargarte el repositorio en un carpeta de tu maquina virtual (ejemplo: red)
+
+_Para arrancar la red:_
+
+```
+>red>docker-compose up --detach
+```
+
+_Para parar la red:_
+
+```
+>red>docker-compose down
+```
+
+_Para resetear todos lo contenedores, redes e imagenes:_
+
+```
+>red>docker system prune
+```
+_Para acceder a uno de los nodos:_
+
+```
+>red>docker exec -it -u 0 <id_docker> /bin/bash
+```
+_Para poder interactuar con la red desplegada, podremos utilizar la API de Hyperledger Besu_
+
+* [API Methods Besu](https://besu.hyperledger.org/en/stable/Reference/API-Methods/) - Los pétodos que se pueden utilizar hasta el momento son "ADMIN","ETH","NET","WEB3","DEBUG","IBFT","PERM"
+
+
+## Autores ✒️
+
+* **Santiago Vallejo** - *Trabajo Inicial* - [santisvs](https://github.com/santisvs)
+
+## Expresiones de Gratitud 🎁
+
+* He utilizado la plantilla de [Villanuevand](https://github.com/Villanuevand) para el README.md (GRACIAS!!) 📢
+* Os agradecería cualquier comentario que me pudiese ayudar y cualquier pregunta que tengais intentare ayudaros. GRACIAS!! 🤓.
+
+
+
+---
