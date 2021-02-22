@@ -31,40 +31,40 @@ Este proyecto consiste en el desarrollo de una red **hyperledger besu** **permis
 	```
 
 * Node Validador 1:
-```
+	```
 	ip: 172.16.239.13:8545
 	node Address: 0xa59acad67a278889e9ab16ba42eee24d006c7078
 	pub Key: 0x10233ff4851c3ed23f4df90079732ab88597657b0937a8c10e61b8954e3b5094463bf3261fdc1ff518eb53c5e095b94a0353184007838df2158bccc0906017c0
 	priv Key: 0xe1cc1fb3e74a30371127250027c3cef5bf41bf2cdf525ba593a379794ee69e50
-```	
+	```	
 * Node Validador 2:
-```
+	```
 	ip: 172.16.239.14:8545
 	node Address: 0xb274123aa2813517b1b93075c2ab2a66efd1af98
 	pub Key: 0x44b8471832b79856b52a9195b956a33ff8aa34ad5a135f9046ca360b1bfe458c16ca4612f0967184ae70624b2808bb59e4bb6db5b168c3ab36de167ed826b14b
 	priv Key: 0x6cb55a3b06fac9c9b4437a4a2204913ce8ef4e3d7ac22bb336d8ffa8bc3fce5d
-```	
+	```	
 * Node Validador 3:
-```
+	```
 	ip: 172.16.239.15:8545
 	node Address: 0xc7c787f7bba6ecca08c81a4287754bb85de324a9
 	pub Key: 0xc454388bcf1d71d1ec0991a214bcd946e1763d505cebd1ef8a91e6698118982bd0ed6f343aec3c7ef8dee75371b7013bcd6743635697e0923da912a7d305cdcf
 	priv Key: 0xfba1bfa36e898bf5a1917a855b0f58f8a8bacd448498021c77577d6e4ca4bee7
-```
+	```
 * Node Validador 4:
-```
+	```
 	ip: 172.16.239.16:8545
 	node Address: 0xe3b196b362542424fc36692ad1105f8ec2c49ce6
 	pub Key: 0x9ad61f91909757f993f52b91df0957211946e61d23a3cdd577262d93f93d901c9b351327f2c27c8901b695cd0ec88c24f91008a078760b31712a497c64004a24
 	priv Key: 0x84b490f212644ebe8cb3d592f326c927094184a2718e153e6bfa89e97d0024da
-```	
+	```	
 * Node Miembro 1: No es nodo validador
-```
+	```
 	ip: 172.16.239.17:8545
 	node Address: 0xf792828cec953c9c6d929e0f3b1cc59c5674af12
 	pub Key: 0x6b367a82f1e326a6f68259802c21cc06269a8343988166b3b246d49f0ef7a047db5a7603aa703ad3ff8f0812989e697200f9d986c11dd1182cb1b8b78d935c69
 	priv Key: 0x16f989df8dc79a6558c46e69483575d78f06aabd5bda28f3ad313993e432f1cf
-```
+	```
 Mira **Despliegue** para conocer como desplegar el proyecto.
 
 
