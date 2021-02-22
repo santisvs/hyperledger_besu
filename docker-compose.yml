@@ -12,7 +12,7 @@ x-besu-bootnode-def:
       /opt/besu/bin/besu --data-path=data public-key export-address --to=/opt/besu/data/address;
       /opt/besu/bin/besu \
       --genesis-file=/config/genesis.json \
-      --permissions-accounts-contract-enabled \
+      --permissions-accounts-config-file-enabled \
       --permissions-accounts-config-file=/opt/besu/data/permissions_config.toml \
       --permissions-nodes-config-file-enabled \
       --permissions-nodes-config-file=/opt/besu/data/permissions_config.toml \
@@ -30,7 +30,7 @@ x-besu-def:
       /opt/besu/bin/besu --data-path=data public-key export-address --to=/opt/besu/data/address;
       /opt/besu/bin/besu \
       --config-file=/config/config.toml \
-      --permissions-accounts-contract-enabled \
+      --permissions-accounts-config-file-enabled \
       --permissions-accounts-config-file=/opt/besu/data/permissions_config.toml \
       --permissions-nodes-config-file-enabled \
       --permissions-nodes-config-file=/opt/besu/data/permissions_config.toml \
@@ -47,7 +47,7 @@ x-besu-admin-def:
       /opt/besu/bin/besu --data-path=data public-key export-address --to=/opt/besu/data/address;
       /opt/besu/bin/besu \
       --config-file=/config/config.toml \
-      --permissions-accounts-contract-enabled \
+      --permissions-accounts-config-file-enabled \
       --permissions-accounts-config-file=/opt/besu/data/permissions_config.toml \
       --permissions-nodes-config-file-enabled \
       --permissions-nodes-config-file=/opt/besu/data/permissions_config.toml \
