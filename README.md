@@ -123,6 +123,42 @@ _Comprobar los nodos validadores_
 ```
 curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_getValidatorsByBlockNumber","params":["latest"], "id":1}' 172.16.239.13:8545
 ```
+_Descartar a bootnode como validador: Todos los validadores excepto bootnode deben votar_
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["4bbaf7ea4c84fd28ef1fa74f10366ad8ad15a692",false], "id":1}' 172.16.239.12:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["4bbaf7ea4c84fd28ef1fa74f10366ad8ad15a692",false], "id":1}' 172.16.239.13:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["4bbaf7ea4c84fd28ef1fa74f10366ad8ad15a692",false], "id":1}' 172.16.239.14:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["4bbaf7ea4c84fd28ef1fa74f10366ad8ad15a692",false], "id":1}' 172.16.239.15:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["4bbaf7ea4c84fd28ef1fa74f10366ad8ad15a692",false], "id":1}' 172.16.239.16:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["4bbaf7ea4c84fd28ef1fa74f10366ad8ad15a692",false], "id":1}' 172.16.239.17:8545
+```
+_Comprobar que los validadores del ultimo nodo_
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_getValidatorsByBlockNumber","params":["latest"], "id":1}' 172.16.239.14:8545
+```
+_Descartar a miembro 1 como validador: Todos los validadores excepto bootnode deben votar_
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["f792828cec953c9c6d929e0f3b1cc59c5674af12",false], "id":1}' 172.16.239.12:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["f792828cec953c9c6d929e0f3b1cc59c5674af12",false], "id":1}' 172.16.239.13:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["f792828cec953c9c6d929e0f3b1cc59c5674af12",false], "id":1}' 172.16.239.14:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["f792828cec953c9c6d929e0f3b1cc59c5674af12",false], "id":1}' 172.16.239.15:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["f792828cec953c9c6d929e0f3b1cc59c5674af12",false], "id":1}' 172.16.239.16:8545
+```
+_Comprobar que los validadores del ultimo nodo_
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_getValidatorsByBlockNumber","params":["latest"], "id":1}' 172.16.239.14:8545
+```
+_Descartar al nodo admin como validador: Todos los validadores excepto bootnode deben votar_
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["43804b7e227e3d4441386ae5ceb0d189b73bdcf1",false], "id":1}' 172.16.239.13:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["43804b7e227e3d4441386ae5ceb0d189b73bdcf1",false], "id":1}' 172.16.239.14:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["43804b7e227e3d4441386ae5ceb0d189b73bdcf1",false], "id":1}' 172.16.239.15:8545
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_proposeValidatorVote","params":["43804b7e227e3d4441386ae5ceb0d189b73bdcf1",false], "id":1}' 172.16.239.16:8545
+```
+_Comprobar que los validadores del ultimo nodo_
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_getValidatorsByBlockNumber","params":["latest"], "id":1}' 172.16.239.15:8545
+```
 
 ## Autores ✒️
 
