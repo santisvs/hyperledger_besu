@@ -2,15 +2,6 @@ logging="INFO"
 data-path="/opt/besu/data"
 host-whitelist=["*"]
 
-# rpc
-rpc-http-enabled=true
-rpc-http-host="0.0.0.0"
-rpc-http-port=8545
-rpc-http-cors-origins=["*"]
-rpc-http-api=["ETH","NET","WEB3","IBFT","PERM"]
-
-# ws
-rpc-ws-enabled=true
-rpc-ws-host="0.0.0.0"
-rpc-ws-port=8546
-rpc-http-api=["ETH","NET","WEB3","IBFT","PERM"]
+# p2p discovery
+p2p-host="172.16.239.11"
+p2p-port=30303
