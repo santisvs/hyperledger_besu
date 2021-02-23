@@ -117,6 +117,12 @@ _Para poder interactuar con la red desplegada, podremos utilizar la API de Hyper
 
 * [API Methods Besu](https://besu.hyperledger.org/en/stable/Reference/API-Methods/) - Los pétodos que se pueden utilizar hasta el momento son "ADMIN","ETH","NET","WEB3","DEBUG","IBFT","PERM"
 
+## Ejecutando las pruebas ⚙️
+
+_Comprobar los nodos validadores_
+```
+curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_getValidatorsByBlockNumber","params":["latest"], "id":1}' 172.16.239.13:8545
+```
 
 ## Autores ✒️
 
