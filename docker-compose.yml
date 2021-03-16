@@ -61,6 +61,8 @@ services:
       - ./config/bootnode/data:/opt/besu/data
       - ./config/bootnode/config.toml:/config/config.toml
       - ./config/genesis.json:/config/genesis.json
+    ports:
+      - 8550:8545
     networks:
       quorum-dev-quickstart:
         ipv4_address: 172.16.239.11
@@ -73,6 +75,8 @@ services:
       - ./config/genesis.json:/config/genesis.json
     depends_on:
       - bootnode
+    ports:
+      - 8551:8545
     networks:
       quorum-dev-quickstart:
         ipv4_address: 172.16.239.12
@@ -86,6 +90,8 @@ services:
     depends_on:
       - bootnode
       - adminnode
+    ports:
+      - 8552:8545
     networks:
       quorum-dev-quickstart:
         ipv4_address: 172.16.239.13
@@ -100,6 +106,8 @@ services:
       - bootnode
       - adminnode
       - validator1
+    ports:
+      - 8553:8545
     networks:
       quorum-dev-quickstart:
         ipv4_address: 172.16.239.14
@@ -115,6 +123,8 @@ services:
       - adminnode
       - validator1
       - validator2
+    ports:
+      - 8554:8545
     networks:
       quorum-dev-quickstart:
         ipv4_address: 172.16.239.15
@@ -131,6 +141,8 @@ services:
       - validator1
       - validator2
       - validator3
+    ports:
+      - 8555:8545
     networks:
       quorum-dev-quickstart:
         ipv4_address: 172.16.239.16
@@ -148,6 +160,8 @@ services:
       - validator2
       - validator3
       - validator4
+    ports:
+      - 8556:8545
     networks:
       quorum-dev-quickstart:
         ipv4_address: 172.16.239.17
