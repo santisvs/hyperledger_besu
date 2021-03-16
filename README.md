@@ -159,15 +159,19 @@ _Comprobar que los validadores del ultimo nodo_
 ```
 curl -X POST --data '{"jsonrpc":"2.0","method":"ibft_getValidatorsByBlockNumber","params":["latest"], "id":1}' 172.16.239.15:8545
 ```
+
+## Ejecutando las pruebas desde fuera de VirtualBox ⚙️
+
 _Llamar a la blockchain desde fuera de VirtualBox_
 En el docker-compose.yml cada servicio redirige (expone) si derección ip de la red Blockchain con un puerto de la red localhost de la maquina virtual. Por ejemplo el servicio adminnode con ip:172.16.239.12:8545 expone el nodo, en la red localhost de la maquina virtual (127.0.0.1) en el puerto 8551. Teniendo en cuenta que una red NAT de VirtualBox expone por defecto el localhost en la ip 10.0.2.15, el mapeo de puertos que nosotros indiquemos sera al que accedamos desde fuera de virtualBox.
 
 Primero debemos mapear cada nodo de la red expuesto en un puerto de la salida estandar del localhost de VirtualBox (ip:10.0.2.15), con un puerto de localhost de nuestro host
 ![image](https://user-images.githubusercontent.com/16113886/111316466-91be8a80-8663-11eb-8d70-789399cc9595.png)
 
-Mapeo de Red:
-| IP:PUERTO Blockchain| IP:PUERTO dentro de VirtualBox| IP:PUERTO fuera de VirtualBox| IP:PUERTO Host|
-| ----- | ---- |
+- Mapeo de Red:
+
+| IP:PUERTO Blockchain | IP:PUERTO dentro de VirtualBox | IP:PUERTO fuera de VirtualBox | IP:PUERTO Host |
+| ----- | ----- | ----- | ----- |
 | 172.16.239.11:8545 | 127.0.0.1:8550 | 10.0.2.15:8550 | 127.0.0.1:8550 |
 | 172.16.239.12:8545 | 127.0.0.1:8551 | 10.0.2.15:8551 | 127.0.0.1:8551 |
 | 172.16.239.13:8545 | 127.0.0.1:8552 | 10.0.2.15:8552 | 127.0.0.1:8552 |
